@@ -1,0 +1,38 @@
+{
+  "name": "RAID-OJAA",
+  "version": "1.0.0",
+  "description": "The most popular RAID levels explained by animated examples.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlekssGu/raid-ojaa.git"
+  },
+  "keywords": [
+    "raid",
+    "animation",
+    "gif",
+    "university"
+  ],
+  "author": "Aleksandrs Gusevs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlekssGu/raid-ojaa/issues"
+  },
+  "homepage": "http://alekssgu.github.io",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13",
+    "gulp-cache": "^0.4.2",
+    "gulp-filter": "^4.0.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-uglify": "^1.5.2",
+    "gulp-useref": "^3.0.5",
+    "run-sequence": "^1.1.5"
+  }
+}
