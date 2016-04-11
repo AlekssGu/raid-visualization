@@ -20,33 +20,40 @@
 		<div class="row">
 			<header class="jumbotron">
 				<h1>RAID</h1>
-				<p>The most popular RAID levels explained by animated examples</p>
+				<p>The most popular RAID levels explained with animated examples</p>
 			</header>
 		</div>
 		<div class="row">
 			<div class="slider">
 				<div class="item">
-					<img src="http://email.tapeonline.com/raid/raid_0_animation.gif" title="RAID 0" alt=""/>
-					<a href="#" class="btn btn-default" role="button">WRITE</a>
-					<a href="#" class="btn btn-default disabled" role="button">READ</a>
-					<a href="#" class="btn btn-default" role="button">DATA LOSS</a>
+					<h1>RAID 0</h1>
+					<a href="#" class="btn btn-default write" role="button" level="raid0">WRITE</a>
+					<a href="#" class="btn btn-default read" role="button" level="raid0">READ</a>
+					<a href="#" class="btn btn-default recover disabled" role="button" level="raid0">RECOVER</a>
 				</div>
 				<div class="item">
-					<h2>RAID 1</h2>
-					<p>Bla bla bla</p>
+					<h1>RAID 1</h1>
+					<a href="#" class="btn btn-default write" role="button" level="raid1">WRITE</a>
+					<a href="#" class="btn btn-default read" role="button" level="raid1">READ</a>
+					<a href="#" class="btn btn-default recover" role="button" level="raid1">RECOVER</a>
 				</div>
 				<div class="item">
-					<h2>RAID 5</h2>
-					<p>Bla bla bla</p>
+					<h1>RAID 5</h1>
+					<a href="#" class="btn btn-default write" role="button" level="raid5">WRITE</a>
+					<a href="#" class="btn btn-default read" role="button" level="raid5">READ</a>
+					<a href="#" class="btn btn-default recover" role="button" level="raid5">RECOVER</a>
 				</div>
 				<div class="item">
-					<h2>RAID 6</h2>
-					<p>Bla bla bla</p>
+					<h1>RAID 6</h1>
+					<a href="#" class="btn btn-default write" role="button" level="raid6">WRITE</a>
+					<a href="#" class="btn btn-default read" role="button" level="raid6">READ</a>
+					<a href="#" class="btn btn-default recover" role="button" level="raid6">RECOVER</a>
 				</div>
-				<div class="item">
-					<h2>RAID 10</h2>
-					<p>Bla bla bla</p>
-				</div>
+			</div>
+		</div>
+		<div class="row text-center">
+			<div class="image-holder">
+				<img id="raid-gif" class="img img-responsive" src="images/RAID0_READ.gif" title="RAID level explanation" alt=""/>
 			</div>
 		</div>
 	</div>
