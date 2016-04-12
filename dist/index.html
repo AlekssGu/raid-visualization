@@ -15,7 +15,6 @@
 	<![endif]-->
 </head>
 <body>
-
 	<div class="container-fluid page">
 		<div class="row">
 			<header class="jumbotron">
@@ -30,27 +29,69 @@
 					<a href="#" class="btn btn-default write" role="button" level="raid0">WRITE</a>
 					<a href="#" class="btn btn-default read" role="button" level="raid0">READ</a>
 					<a href="#" class="btn btn-default recover disabled" role="button" level="raid0">RECOVER</a>
+					<a href="#" class="btn btn-default calculate" role="button" level="raid0" data-toggle="modal" data-target="#calcModal">CALCULATE <span class="glyphicon glyphicon-new-window"></span></a>
 				</div>
 				<div class="item">
 					<h1>RAID 1</h1>
 					<a href="#" class="btn btn-default write" role="button" level="raid1">WRITE</a>
 					<a href="#" class="btn btn-default read" role="button" level="raid1">READ</a>
 					<a href="#" class="btn btn-default recover" role="button" level="raid1">RECOVER</a>
+					<a href="#" class="btn btn-default calculate" role="button" level="raid1" data-toggle="modal" data-target="#calcModal">CALCULATE <span class="glyphicon glyphicon-new-window"></span></a>
 				</div>
 				<div class="item">
 					<h1>RAID 5</h1>
 					<a href="#" class="btn btn-default write" role="button" level="raid5">WRITE</a>
 					<a href="#" class="btn btn-default read" role="button" level="raid5">READ</a>
 					<a href="#" class="btn btn-default recover" role="button" level="raid5">RECOVER</a>
+					<a href="#" class="btn btn-default calculate" role="button" level="raid5" data-toggle="modal" data-target="#calcModal">CALCULATE <span class="glyphicon glyphicon-new-window"></span></a>
 				</div>
 				<div class="item">
 					<h1>RAID 6</h1>
 					<a href="#" class="btn btn-default write" role="button" level="raid6">WRITE</a>
 					<a href="#" class="btn btn-default read" role="button" level="raid6">READ</a>
 					<a href="#" class="btn btn-default recover" role="button" level="raid6">RECOVER</a>
+					<a href="#" class="btn btn-default calculate" role="button" level="raid6" data-toggle="modal" data-target="#calcModal">CALCULATE <span class="glyphicon glyphicon-new-window"></span></a>
 				</div>
 			</div>
 		</div>
+		<div class="modal fade" id="calcModal" tabindex="-1" role="dialog">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">Calculate RAID capacity &amp; redundancy</h4>
+		      </div>
+		      <div class="modal-body">
+						<h2 class="level"></h2>
+						<p class="lead shortDesc"></p>
+						<div class="form-group">
+						  <input id="diskQuantity" type="number" class="form-control" min="0" placeholder="Input disk quantity">
+							<p class="help-block quantityText"></p>
+						</div>
+						<div class="form-group">
+						  <input id="diskSize" type="number" class="form-control" min="0" placeholder="Input size of the disk">
+							<p class="help-block sizeText"></p>
+						</div>
+						<div class="form-group">
+							<label>Result</label>
+							<div class="well results">
+								<div class="row">
+									<div class="col-md-6">
+								  	<p>Redundancy: <span class="redundancy"></span></p>
+									</div>
+									<div class="col-md-6">
+										<p>Capacity: <span class="capacity"></span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
 		<div class="row text-center">
 			<div class="image-holder">
 				<img id="raid-gif" class="img img-responsive" src="images/RAID0_READ.gif" title="RAID level explanation" alt=""/>
