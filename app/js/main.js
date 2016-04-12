@@ -39,6 +39,16 @@ $(document).ready(function() {
     } else if (mode == 'CALCULATE') {
       $('#calcModal .level').text(level);
 
+      if(level == 'RAID0') {
+        $('#diskQuantity').addClass('hidden');
+        $('#diskSize').addClass('hidden');
+        redundancy = $('.results .redundancy').text('No redundancy');
+        capacity = $('.results .capacity').text('Full capacity');
+      } else {
+        $('#diskQuantity').removeClass('hidden');
+        $('#diskSize').removeClass('hidden');
+      }
+
       switch (level)
       {
          case 'RAID0': shortDesc = 'Speed over capacity'
@@ -63,7 +73,7 @@ $(document).ready(function() {
   });
 
   $('#calcModal').on('shown.bs.modal', function () {
-    $('#diskQuantity').focus()
+    $('#diskQuantity').focus();
   })
 
   $('#calcModal').on('hidden.bs.modal', function () {
@@ -100,26 +110,44 @@ $(document).ready(function() {
       else if(n>=2) {
         quantityText.text('');
         redundancy.text('None');
-        capacity.text('Full capacity (' + n * s + ')');
+        capacity.text('Full capacity');
       }
 
     } else if (level == 'RAID1') {
-      if(n < 2) quantityText.text(level + ' requires minimum 2 disks');
-      else if(n >= 2) quantityText.text('');
-      redundancy.text(n-1);
-      capacity.text(s)
+      if(n < 2) {
+        quantityText.text(level + ' requires minimum 2 disks');
+        redundancy.text('');
+        capacity.text('');
+      }
+      else if(n >= 2) {
+        quantityText.text('');
+        redundancy.text(n-1);
+        capacity.text(s + ' GB');
+      }
 
     } else if (level == 'RAID5') {
-      if(n < 3) quantityText.text(level + ' requires minimum 3 disks');
-      else if(n >= 3) quantityText.text('');
-      redundancy.text(1);
-      capacity.text((n-1)*s);
+      if(n < 3) {
+        quantityText.text(level + ' requires minimum 3 disks');
+        redundancy.text('');
+        capacity.text('');
+      }
+      else if(n >= 3) {
+        quantityText.text('');
+        redundancy.text(1);
+        capacity.text((n-1)*s + ' GB');
+      }
 
     } else if (level == 'RAID6') {
-      if(n < 4) quantityText.text(level + ' requires minimum 4 disks');
-      else if(n >= 4) quantityText.text('');
-      redundancy.text(2);
-      capacity.text((n-2)*s);
+      if(n < 4) {
+        quantityText.text(level + ' requires minimum 4 disks');
+        redundancy.text('');
+        capacity.text('');
+      }
+      else if(n >= 4) {
+        quantityText.text('');
+        redundancy.text(2);
+        capacity.text((n-2)*s + ' GB');
+      }
     }
   });
 
