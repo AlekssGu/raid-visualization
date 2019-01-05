@@ -1,4 +1,4 @@
-# RAID-OJAA
+# RAID visualization
 
 The most popular RAID levels explained by animated examples.
 
